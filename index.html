@@ -128,6 +128,8 @@ h2{font-family:Georgia,serif;color:var(--brown);font-size:1.15rem;margin:0 0 14p
   <section id="step3" class="step" hidden>
     <h2>3 · Danke – und ich freue mich riesig! 💚</h2>
     <p id="summary" class="summary"></p>
+    <p style="text-align:center"><a id="send-mail" class="btn btn-ja" href="#" hidden>📨 Termin an Luca senden</a></p>
+    <p class="sub2" style="text-align:center">Beim Auswählen der Uhrzeit öffnet sich automatisch eine vorbefüllte Mail an Luca – über den Button kannst du sie erneut öffnen.</p>
     <div class="place">
       <h3>📍 Unser Treffpunkt</h3>
       <p class="place-name">„The Beautiful &amp; the Brilliant“ – Café im Kleidermagazin</p>
@@ -186,6 +188,13 @@ ja.addEventListener('click', function(){
   setTimeout(function(){ s2.scrollIntoView({behavior:'smooth', block:'start'}); }, 350);
 });
 
+var OWNER_EMAIL = 'luca.dorendorf@outlook.de';
+function mailtoFor(label){
+  var subject = encodeURIComponent('Coffee Date – Terminwahl Sa 21.11.2026 um ' + label + ' Uhr');
+  var body = encodeURIComponent('Hallo Luca,\n\nich habe mich für unser Coffee Date entschieden:\n\nSamstag, 21.11.2026, um ' + label + ' Uhr\n\nTreffpunkt: „The Beautiful & the Brilliant“ – Café im Kleidermagazin, Ladage & Oelke, Alter Wall 22, 20457 Hamburg.\n\nBis Samstag! ☕');
+  return 'mailto:' + OWNER_EMAIL + '?subject=' + subject + '&body=' + body;
+}
+
 var slotsEl = document.getElementById('slots');
 for (var m = 13 * 60; m <= 17 * 60 + 30; m += 30) {
   (function(mins){
@@ -204,6 +213,10 @@ for (var m = 13 * 60; m <= 17 * 60 + 30; m += 30) {
       s3.hidden = false;
       document.getElementById('summary').textContent =
         'Wir sehen uns am Samstag, 21.11.2026, um ' + label + ' Uhr – bis dann! ☕';
+      var link = document.getElementById('send-mail');
+      link.href = mailtoFor(label);
+      link.hidden = false;
+      window.location.href = link.href;
       s3.scrollIntoView({behavior:'smooth', block:'start'});
     });
     slotsEl.appendChild(b);
