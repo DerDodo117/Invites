@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Einladung zum Coffee Date am Samstag, 21.11.2026, im Café „The Beautiful & the Brilliant“ bei Ladage & Oelke, Hamburg.">
+<title>☕ Coffee Date – Samstag, 21.11.2026</title>
+<style>
+:root{
+  --off:#f5f1e8;
+  --paper:#faf7f0;
+  --brown:#5b4326;
+  --brown-d:#3e2d16;
+  --green:#3e5c3a;
+  --green-d:#2b4229;
+  --gold:#b08d4f;
+  --ink:#33291c;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  margin:0;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  background:var(--off);
+  color:var(--ink);
+}
+.tartan{
+  height:16px;
+  background:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.08) 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(90deg,
+      var(--green-d) 0 26px,
+      var(--gold) 26px 31px,
+      var(--brown) 31px 57px,
+      var(--gold) 57px 62px,
+      var(--green) 62px 88px,
+      var(--gold) 88px 93px);
+}
+main.card{
+  max-width:660px;
+  margin:36px auto;
+  background:var(--paper);
+  border:2px solid var(--brown);
+  border-radius:16px;
+  padding:28px 26px 32px;
+  box-shadow:0 10px 28px rgba(62,45,22,.18);
+}
+header{text-align:center;border-bottom:2px dashed var(--gold);padding-bottom:18px;margin-bottom:6px}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:var(--green-d);margin:0;font-weight:600}
+h1{font-family:Georgia,'Times New Roman',serif;color:var(--brown-d);margin:.25em 0 .15em;font-size:2.1rem}
+.sub{color:var(--green-d);margin:0;font-size:1rem}
+.step{padding:20px 0;border-bottom:1px solid #e3dcc9}
+.step:last-child{border-bottom:none}
+h2{font-family:Georgia,serif;color:var(--brown);font-size:1.15rem;margin:0 0 14px}
+.sub2{color:#7a6a4f;font-size:.88rem;margin:-8px 0 12px}
+.answers{display:flex;gap:18px;justify-content:center;align-items:center;padding:10px 0;min-height:64px}
+.btn{
+  font-size:1.1rem;font-weight:700;padding:12px 38px;border-radius:999px;
+  border:2px solid transparent;cursor:pointer;
+}
+.btn-ja{background:var(--green);color:#fff;border-color:var(--green-d);transition:transform .15s ease, box-shadow .15s ease}
+.btn-ja:hover{transform:scale(1.06);box-shadow:0 4px 12px rgba(43,66,41,.35)}
+.btn-ja:disabled{cursor:default;transform:none;box-shadow:none;opacity:.92}
+.btn-nein{
+  background:var(--brown);color:#fff;border-color:var(--brown-d);
+  position:relative;z-index:5;
+  transition:left .18s ease, top .18s ease, transform .18s ease, opacity .4s ease;
+}
+.nein-gone{opacity:0;transform:scale(0)!important;pointer-events:none}
+.hint{text-align:center;color:var(--green-d);font-style:italic;min-height:1.2em;margin:8px 0 0;font-size:.92rem}
+.reaction{
+  text-align:center;background:#eef3ea;border:2px solid var(--green);
+  border-radius:12px;padding:16px;margin-top:12px;
+}
+.reaction .big{font-family:Georgia,serif;font-size:1.35rem;color:var(--green-d);margin:0 0 6px;font-weight:700}
+.reaction p{margin:0}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.slot{
+  padding:11px 0;border-radius:10px;border:2px solid var(--brown);background:#fff;
+  color:var(--brown-d);font-weight:700;font-size:1rem;cursor:pointer;transition:all .15s ease;
+}
+.slot:hover{border-color:var(--green);color:var(--green-d);transform:translateY(-2px)}
+.slot.selected{background:var(--green);border-color:var(--green-d);color:#fff;transform:scale(1.05)}
+.summary{font-size:1.08rem;text-align:center;color:var(--brown-d);font-weight:600;background:#f3ecdd;border-radius:10px;padding:12px;margin:0 0 14px}
+.place{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:18px;margin:0 0 16px;text-align:center}
+.place h3{margin:0 0 8px;font-family:Georgia,serif;color:var(--brown)}
+.place-name{font-family:Georgia,serif;font-weight:700;color:var(--brown-d);font-size:1.05rem;margin:0 0 6px}
+.place p{margin:4px 0}
+.hours{font-size:.85rem;color:var(--green-d)}
+.place a{color:var(--green-d);font-weight:600}
+.thanks{text-align:center;font-family:Georgia,serif;font-size:1.12rem;color:var(--green-d);line-height:1.5}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+@media (max-width:480px){
+  main.card{margin:16px 12px;padding:20px 16px 24px}
+  h1{font-size:1.7rem}
+  .btn{padding:11px 30px;font-size:1rem}
+}
+</style>
+</head>
+<body>
+<div class="tartan"></div>
+<main class="card">
+  <header>
+    <p class="eyebrow">Du bist eingeladen</p>
+    <h1>☕ Coffee Date</h1>
+    <p class="sub">Samstag, 21. November 2026 · Nachmittag</p>
+  </header>
+
+  <section id="step1" class="step">
+    <h2>1 · Hast du am Samstag, den 21.11.2026, nachmittags Zeit?</h2>
+    <div class="answers">
+      <button id="ja" class="btn btn-ja" type="button">Ja</button>
+      <button id="nein" class="btn btn-nein" type="button">Nein</button>
+    </div>
+    <p id="nein-msg" class="hint" hidden></p>
+    <div id="ja-reaction" class="reaction" hidden>
+      <p class="big">🎉 Die beste Entscheidung deines Samstags! 🎉</p>
+      <p>Dann legen wir direkt fest, wann wir uns sehen …</p>
+    </div>
+  </section>
+
+  <section id="step2" class="step" hidden>
+    <h2>2 · Wann treffen wir uns?</h2>
+    <p class="sub2">Samstag, 21.11.2026 – wähle einen Zeitpunkt (alle 30 Minuten, 13:00–17:30 Uhr)</p>
+    <div id="slots" class="slots"></div>
+  </section>
+
+  <section id="step3" class="step" hidden>
+    <h2>3 · Danke – und ich freue mich riesig! 💚</h2>
+    <p id="summary" class="summary"></p>
+    <div class="place">
+      <h3>📍 Unser Treffpunkt</h3>
+      <p class="place-name">„The Beautiful &amp; the Brilliant“ – Café im Kleidermagazin</p>
+      <p>Ladage &amp; Oelke<br>Alter Wall 22<br>20457 Hamburg</p>
+      <p class="hours">Samstags geöffnet: 10:00–18:00 Uhr</p>
+      <p><a href="https://ladage-oelke.de/ladenlokal/cafe-im-kleidermagazin/" target="_blank" rel="noopener">Zur Webseite des Cafés ↗</a></p>
+    </div>
+    <p class="thanks">Danke, dass du „Ja“ gesagt hast – ich freue mich schon sehr auf unser Coffee Date am 21.11.! Bis Samstag! ☕</p>
+  </section>
+</main>
+<div class="tartan"></div>
+<canvas id="confetti"></canvas>
+<script>
+var ja = document.getElementById('ja');
+var nein = document.getElementById('nein');
+var hint = document.getElementById('nein-msg');
+var dodges = 0;
+var scale = 1;
+var msgs = {
+  1: 'Hoppla – zu langsam! 😉',
+  3: 'Der „Nein“-Button fühlt sich hier nicht mehr wohl …',
+  6: 'Er gibt nicht auf. Musst du aber auch nicht. 😄'
+};
+function dodge(){
+  var w = nein.offsetWidth, h = nein.offsetHeight;
+  var jaR = ja.getBoundingClientRect();
+  var jx = jaR.left + jaR.width / 2, jy = jaR.top + jaR.height / 2;
+  var x, y, tries = 0;
+  do {
+    x = 8 + Math.random() * Math.max(1, window.innerWidth - w - 16);
+    y = 8 + Math.random() * Math.max(1, window.innerHeight - h - 16);
+    tries++;
+  } while (tries < 12 && Math.hypot(x + w / 2 - jx, y + h / 2 - jy) < 170);
+  nein.style.position = 'fixed';
+  nein.style.left = x + 'px';
+  nein.style.top = y + 'px';
+  scale = Math.max(0.55, scale * 0.93);
+  nein.style.transform = 'scale(' + scale + ')';
+  dodges++;
+  if (msgs[dodges]) { hint.hidden = false; hint.textContent = msgs[dodges]; }
+}
+nein.addEventListener('pointerenter', dodge);
+nein.addEventListener('touchstart', function(e){ e.preventDefault(); dodge(); }, {passive:false});
+nein.addEventListener('click', function(e){ e.preventDefault(); dodge(); });
+
+ja.addEventListener('click', function(){
+  burst();
+  document.getElementById('ja-reaction').hidden = false;
+  ja.textContent = 'Ja ✓';
+  ja.disabled = true;
+  nein.style.left = '';
+  nein.style.top = '';
+  nein.classList.add('nein-gone');
+  var s2 = document.getElementById('step2');
+  s2.hidden = false;
+  setTimeout(function(){ s2.scrollIntoView({behavior:'smooth', block:'start'}); }, 350);
+});
+
+var slotsEl = document.getElementById('slots');
+for (var m = 13 * 60; m <= 17 * 60 + 30; m += 30) {
+  (function(mins){
+    var hh = Math.floor(mins / 60);
+    var mm = mins % 60;
+    var label = hh + ':' + (mm < 10 ? '0' + mm : mm);
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'slot';
+    b.textContent = label + ' Uhr';
+    b.addEventListener('click', function(){
+      var all = slotsEl.querySelectorAll('.slot');
+      for (var i = 0; i < all.length; i++) { all[i].classList.remove('selected'); }
+      b.classList.add('selected');
+      var s3 = document.getElementById('step3');
+      s3.hidden = false;
+      document.getElementById('summary').textContent =
+        'Wir sehen uns am Samstag, 21.11.2026, um ' + label + ' Uhr – bis dann! ☕';
+      s3.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    slotsEl.appendChild(b);
+  })(m);
+}
+
+function burst(){
+  var c = document.getElementById('confetti');
+  var ctx = c.getContext('2d');
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  var colors = ['#3e5c3a', '#2b4229', '#5b4326', '#3e2d16', '#b08d4f', '#8a9a5b'];
+  var ps = [];
+  for (var i = 0; i < 180; i++) {
+    ps.push({
+      x: Math.random() * c.width,
+      y: -20 - Math.random() * c.height * 0.3,
+      vx: (Math.random() - 0.5) * 3,
+      vy: 2 + Math.random() * 3.5,
+      w: 6 + Math.random() * 6,
+      h: 8 + Math.random() * 8,
+      r: Math.random() * Math.PI,
+      vr: (Math.random() - 0.5) * 0.2,
+      col: colors[i % colors.length]
+    });
+  }
+  var start = performance.now();
+  function frame(now){
+    ctx.clearRect(0, 0, c.width, c.height);
+    for (var i = 0; i < ps.length; i++) {
+      var p = ps[i];
+      p.x += p.vx; p.y += p.vy; p.vy += 0.08; p.r += p.vr;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.r);
+      ctx.fillStyle = p.col;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    }
+    if (now - start < 2600) { requestAnimationFrame(frame); }
+    else { ctx.clearRect(0, 0, c.width, c.height); }
+  }
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>
